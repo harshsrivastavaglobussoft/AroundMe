@@ -102,5 +102,39 @@ class GoogleDataProvider {
                 .resume()
         }
     }
+    
+    
+    func getDirection(originLattitde:String,originLongitude:String,DestinatonLattitude:String,DestinationLongitude:String, completion: @escaping(DirectionData?,Error?) -> Void) -> Void {
+        
+        let urlString = "https://maps.googleapis.com/maps/api/directions/json?origin=\(originLattitde),\(originLongitude)&destination=\(DestinatonLattitude),\(DestinationLongitude)&key=\(googleAPIKey)"
+        
+        guard let url = URL(string: urlString) else {
+            return
+        }
+        
+        if let task = placesTask, task.taskIdentifier > 0 && task.state == .running {
+            task.cancel()
+        }
+        
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        }
+        
+        placesTask = session.dataTask(with: url) { data, response, error in
+            if error != nil {
+                completion(nil, error)
+            }
+            else {
+                do {
+                    let response = try JSONDecoder().decode(DirectionData.self, from: data! as Data)
+                    completion(response, error)
+                } catch let error {
+                    print(error)
+                }
+            }
+        }
+        placesTask?.resume()
+    }
+
 }
 

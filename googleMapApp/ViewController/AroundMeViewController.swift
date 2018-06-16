@@ -52,9 +52,6 @@ extension AroundMeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var Cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        if Cell == nil {
-            Cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "")
-        }
         Cell?.selectionStyle = UITableViewCellSelectionStyle.none
         
         let key = sortedKeys[indexPath.row]

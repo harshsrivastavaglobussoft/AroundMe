@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rO8-I1-0dR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rO8-I1-0dR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="KannadaSangamMN.ttc">
-            <string>KannadaSangamMN</string>
-            <string>KannadaSangamMN-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Navigation Controller-->
         <scene sceneID="RSX-g4-PCT">
@@ -129,6 +122,17 @@
                                     <constraint firstAttribute="trailing" secondItem="1dw-zo-MuK" secondAttribute="trailing" id="hSt-v3-CPH"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HhT-gX-40R">
+                                <rect key="frame" x="10" y="557" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BhU-h7-zbH"/>
+                                    <constraint firstAttribute="width" secondItem="HhT-gX-40R" secondAttribute="height" multiplier="1:1" id="k7R-vI-faI"/>
+                                </constraints>
+                                <state key="normal" image="direction"/>
+                                <connections>
+                                    <action selector="getDirectionAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b3V-br-47m"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4I-9j-KnS">
                                 <rect key="frame" x="0.0" y="100" width="375" height="5"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -146,9 +150,11 @@
                             <constraint firstItem="n7d-ro-fI8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Hap-yg-bGq"/>
                             <constraint firstItem="hnc-8U-Tht" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Mc3-AM-l47"/>
                             <constraint firstItem="Lbg-IU-9wp" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="PNJ-zS-vTS"/>
+                            <constraint firstItem="HhT-gX-40R" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="UUn-Nb-DxF"/>
                             <constraint firstItem="hnc-8U-Tht" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WbV-hO-crn"/>
                             <constraint firstItem="nUM-VS-Uem" firstAttribute="centerX" secondItem="hnc-8U-Tht" secondAttribute="centerX" id="a51-1f-sIF"/>
                             <constraint firstItem="z4I-9j-KnS" firstAttribute="top" secondItem="hnc-8U-Tht" secondAttribute="bottom" id="emy-2B-nCp"/>
+                            <constraint firstItem="Lbg-IU-9wp" firstAttribute="top" secondItem="HhT-gX-40R" secondAttribute="bottom" constant="10" id="l3e-jF-dHc"/>
                             <constraint firstItem="hnc-8U-Tht" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lsJ-s3-0ug"/>
                             <constraint firstAttribute="bottom" secondItem="Lbg-IU-9wp" secondAttribute="bottom" id="mb3-Tn-ECh"/>
                             <constraint firstItem="n7d-ro-fI8" firstAttribute="top" secondItem="hnc-8U-Tht" secondAttribute="bottom" constant="5" id="seu-NP-DyQ"/>
@@ -322,6 +328,7 @@
     <resources>
         <image name="Cartography-app-header" width="264" height="191"/>
         <image name="back" width="100" height="100"/>
+        <image name="direction" width="64" height="64"/>
         <image name="download" width="780" height="439"/>
         <image name="icons8-search-64" width="100" height="100"/>
         <image name="place_marker" width="48" height="48"/>

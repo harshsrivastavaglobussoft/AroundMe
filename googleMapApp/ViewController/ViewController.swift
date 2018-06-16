@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     private let dataProvider = GoogleDataProvider()
     private let locationManager = CLLocationManager()
     private let searchRadius: Double = 2000
+    private var myLocation:CLLocation!
+    private var destination: PlaceMarker!
+    private var polyline:GMSPolyline!
     var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     
     struct StroryBoardID {
@@ -97,6 +100,34 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK: fetch directions
+    @IBAction func getDirectionAction(_ sender: Any) {
+        dataProvider.getDirection(originLattitde: String(self.myLocation.coordinate.latitude), originLongitude: String(self.myLocation.coordinate.longitude), DestinatonLattitude: String(self.destination.place.coordinate.latitude), DestinationLongitude: String(self.destination.place.coordinate.longitude)) { (response, error) in
+            
+            DispatchQueue.main.async {[unowned self] in
+                if response?.status == "OK" {
+                    let polyLineString = response?.routes?[0].overview_polyline?.points ?? ""
+                    self.addPolyLine(encodedString: polyLineString)
+                }
+            }
+            
+        }
+    }
+
+    func addPolyLine(encodedString: String) {
+        
+        let path = GMSMutablePath.init(fromEncodedPath: encodedString)
+        
+        if self.polyline == nil{
+            self.polyline = GMSPolyline()
+        }
+        self.polyline.path = path
+        self.polyline.strokeWidth = 5
+        self.polyline.strokeColor = .blue
+        self.polyline.map = self.MapView
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -135,6 +166,7 @@ extension ViewController:CLLocationManagerDelegate {
         MapView.camera = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
         
         //Tell locationManager you’re no longer interested in updates; you don’t want to follow a user around as their initial location is enough for you to work with
+        self.myLocation = location
         locationManager.stopUpdatingLocation()
         fetchNearbyPlaces(coordinate: location.coordinate)
     }
@@ -164,7 +196,7 @@ extension ViewController:GMSMapViewDelegate {
         guard let placeMarker = marker as? PlaceMarker else {
             return nil
         }
-        
+        self.destination = placeMarker
         guard let infoView = UIView.viewFromNibName("MarkerInfoView") as? MarkerInfoView else {
             return nil
         }
@@ -187,6 +219,8 @@ extension ViewController:GMSMapViewDelegate {
         self.placeMaker.fadeOut(0.25)
         return false
     }
+    
+
 }
 // MARK: - TypesTableViewControllerDelegate
 extension ViewController: AroundMeViewControllerDelegate {

@@ -1,47 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AppleSDGothicNeo.ttc">
-            <string>AppleSDGothicNeo-Light</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MarkerInfoView" customModule="googleMapApp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="gRX-0V-jhk" customClass="MarkerInfoView" customModule="googleMapApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="130" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AAT-fP-8Od">
-                    <rect key="frame" x="10" y="10" width="110" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="60" id="xBi-Bm-Cfn"/>
-                    </constraints>
+                    <rect key="frame" x="5" y="5" width="100" height="65"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LY-Wf-Ljq">
-                    <rect key="frame" x="10" y="75" width="110" height="20"/>
-                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="10"/>
-                    <nil key="textColor"/>
+                    <rect key="frame" x="5" y="75" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="1PQ-6d-hV5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.90862888097763062" green="0.87558627128601074" blue="0.76919478178024292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="7LY-Wf-Ljq" firstAttribute="leading" secondItem="fLj-wn-3Mi" secondAttribute="leading" constant="10" id="6Q1-KW-6cU"/>
-                <constraint firstItem="fLj-wn-3Mi" firstAttribute="trailing" secondItem="7LY-Wf-Ljq" secondAttribute="trailing" constant="10" id="E3P-gp-AwW"/>
-                <constraint firstItem="AAT-fP-8Od" firstAttribute="top" secondItem="gRX-0V-jhk" secondAttribute="top" constant="10" id="IEH-72-2WH"/>
-                <constraint firstItem="7LY-Wf-Ljq" firstAttribute="top" secondItem="AAT-fP-8Od" secondAttribute="bottom" constant="5" id="JnI-sX-0af"/>
-                <constraint firstAttribute="trailing" secondItem="AAT-fP-8Od" secondAttribute="trailing" constant="10" id="RjC-Bs-6QX"/>
-                <constraint firstItem="7LY-Wf-Ljq" firstAttribute="bottom" secondItem="fLj-wn-3Mi" secondAttribute="bottom" constant="-5" id="W8V-Vj-mT2"/>
-                <constraint firstItem="AAT-fP-8Od" firstAttribute="leading" secondItem="gRX-0V-jhk" secondAttribute="leading" constant="10" id="flC-ty-f5D"/>
+                <constraint firstItem="AAT-fP-8Od" firstAttribute="top" secondItem="fLj-wn-3Mi" secondAttribute="top" constant="5" id="AKR-de-dfM"/>
+                <constraint firstItem="fLj-wn-3Mi" firstAttribute="bottom" secondItem="7LY-Wf-Ljq" secondAttribute="bottom" constant="5" id="O1c-2J-CvZ"/>
+                <constraint firstItem="AAT-fP-8Od" firstAttribute="leading" secondItem="fLj-wn-3Mi" secondAttribute="leading" constant="5" id="XBB-aa-0k8"/>
+                <constraint firstItem="fLj-wn-3Mi" firstAttribute="trailing" secondItem="AAT-fP-8Od" secondAttribute="trailing" constant="5" id="ZUh-7y-G9z"/>
+                <constraint firstItem="7LY-Wf-Ljq" firstAttribute="top" secondItem="AAT-fP-8Od" secondAttribute="bottom" constant="5" id="bjy-S8-g09"/>
+                <constraint firstItem="fLj-wn-3Mi" firstAttribute="trailing" secondItem="7LY-Wf-Ljq" secondAttribute="trailing" constant="5" id="dNw-H2-rzY"/>
+                <constraint firstItem="7LY-Wf-Ljq" firstAttribute="leading" secondItem="fLj-wn-3Mi" secondAttribute="leading" constant="5" id="eaw-id-xMK"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fLj-wn-3Mi"/>
@@ -49,7 +43,7 @@
                 <outlet property="palceLabel" destination="7LY-Wf-Ljq" id="goK-t8-2Fm"/>
                 <outlet property="placePhoto" destination="AAT-fP-8Od" id="liZ-iS-xaO"/>
             </connections>
-            <point key="canvasLocation" x="-22" y="-203"/>
+            <point key="canvasLocation" x="-14" y="-206"/>
         </view>
     </objects>
 </document>
