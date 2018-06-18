@@ -22,10 +22,13 @@ class ViewController: UIViewController {
     private var myLocation:CLLocation!
     private var destination: PlaceMarker!
     private var polyline:GMSPolyline!
+    private var polylineData:DirectionData!
+    
     var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
     
     struct StroryBoardID {
         static let AROUNRVCID = "aroudmeSegueID"
+        static let DIRECTIONSVC = "SegueDirection"
     }
     //MARK: View Did Load
     override func viewDidLoad() {
@@ -58,6 +61,10 @@ class ViewController: UIViewController {
             let aroundvc = segue.destination as! AroundMeViewController
             aroundvc.selectedTypes = searchedTypes
             aroundvc.delegate = self
+        }
+        else if segue.identifier == StroryBoardID.DIRECTIONSVC {
+            let directionVC = segue.destination as! DirectionsViewController
+            directionVC.tableData = self.polylineData.routes?[0].legs?[0].steps ?? []
         }
     }
 
@@ -106,6 +113,7 @@ class ViewController: UIViewController {
             
             DispatchQueue.main.async {[unowned self] in
                 if response?.status == "OK" {
+                    self.polylineData = response
                     let polyLineString = response?.routes?[0].overview_polyline?.points ?? ""
                     self.addPolyLine(encodedString: polyLineString)
                 }
@@ -128,6 +136,9 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func instructionsButtonAction(_ sender: Any) {
+        performSegue(withIdentifier: StroryBoardID.DIRECTIONSVC, sender: [stepsData]?.self)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

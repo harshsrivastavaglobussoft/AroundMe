@@ -20,6 +20,8 @@
 		959692D620C7A29A00FDA761 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959692D420C7A29A00FDA761 /* LaunchScreen.storyboard */; };
 		959692E120C7A29B00FDA761 /* googleMapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959692E020C7A29B00FDA761 /* googleMapAppTests.swift */; };
 		959692EC20C7A29B00FDA761 /* googleMapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959692EB20C7A29B00FDA761 /* googleMapAppUITests.swift */; };
+		95B4216720D775DC006369C4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4216620D775DC006369C4 /* StringExtension.swift */; };
+		95B4216920D787BB006369C4 /* DirectionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B4216820D787BB006369C4 /* DirectionsViewController.swift */; };
 		95C4D10B20D3A29E0014F964 /* DirectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C4D10A20D3A29E0014F964 /* DirectionData.swift */; };
 		95D15BB020CFAE5700605EAF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D15BA620CFAE5600605EAF /* UIViewExtension.swift */; };
 		95D15BB120CFAE5700605EAF /* AroundMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D15BA820CFAE5700605EAF /* AroundMeViewController.swift */; };
@@ -71,6 +73,8 @@
 		959692E720C7A29B00FDA761 /* googleMapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = googleMapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		959692EB20C7A29B00FDA761 /* googleMapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = googleMapAppUITests.swift; sourceTree = "<group>"; };
 		959692ED20C7A29B00FDA761 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95B4216620D775DC006369C4 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		95B4216820D787BB006369C4 /* DirectionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionsViewController.swift; sourceTree = "<group>"; };
 		95C4D10A20D3A29E0014F964 /* DirectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionData.swift; sourceTree = "<group>"; };
 		95D15BA620CFAE5600605EAF /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		95D15BA820CFAE5700605EAF /* AroundMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AroundMeViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				95D15BA620CFAE5600605EAF /* UIViewExtension.swift */,
+				95B4216620D775DC006369C4 /* StringExtension.swift */,
 			);
 			path = ExtensionClass;
 			sourceTree = "<group>";
@@ -211,6 +216,7 @@
 			children = (
 				95D15BA820CFAE5700605EAF /* AroundMeViewController.swift */,
 				95D15BA920CFAE5700605EAF /* ViewController.swift */,
+				95B4216820D787BB006369C4 /* DirectionsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -473,11 +479,13 @@
 				95D15BB120CFAE5700605EAF /* AroundMeViewController.swift in Sources */,
 				954C08FE20CFE4520050C7A1 /* GoogleDataProvider.swift in Sources */,
 				95D15BB020CFAE5700605EAF /* UIViewExtension.swift in Sources */,
+				95B4216920D787BB006369C4 /* DirectionsViewController.swift in Sources */,
 				95D15BB220CFAE5700605EAF /* ViewController.swift in Sources */,
 				95C4D10B20D3A29E0014F964 /* DirectionData.swift in Sources */,
 				95D15BB520CFAE5700605EAF /* AppDelegate.swift in Sources */,
 				95D15BB420CFAE5700605EAF /* PlaceMaker.swift in Sources */,
 				954C08FC20CFE39C0050C7A1 /* GooglePlace.swift in Sources */,
+				95B4216720D775DC006369C4 /* StringExtension.swift in Sources */,
 				959692D120C7A29A00FDA761 /* googleMapApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
